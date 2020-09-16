@@ -1,51 +1,30 @@
 
+const conversion = {"M" : 1000 , "D" : 500 , "C" : 100,"L" : 50, "X" : 10 , "I" : 1}
+function roman_calculate(romanNum) {
+  const array = romanNum.split('')
+  let total = 0;
+  let current;
+  let currentValue;
+  let next;
+  let nextValue;
 
-function roman_calculate(res1, res2) {
+  for (let i = 0;i < array.length , i++) {
+    current = array[i];
+    currentValue = conversion[current]
 
-    const romanNumerals = [{
-        numeral: "M",
-        value: 1000
-      }, {
-        numeral: "CM",
-        value: 900
-      }, {
-        numeral: "D",
-        value: 500
-      }, {
-        numeral: "CD",
-        value: 400
-      }, {
-        numeral: "C",
-        value: 100
-      }, {
-        numeral: "XC",
-        value: 90
-      }, {
-        numeral: "L",
-        value: 50
-      }, {
-        numeral: "XL",
-        value: 40
-      }, {
-        numeral: "X",
-        value: 10
-      }, {
-        numeral: "IX",
-        value: 9
-      }, {
-        numeral: "V",
-        value: 5
-      }, {
-        numeral: "IV",
-        value: 4
-      }, {
-        numeral: "I",
-        value: 1
-      }];
-    
-    const x = res1
-    const y = x.map(romanNumerals['numeral'])
-    console.log(x);
+    next = array[i+1];
+    nextValue = conversion[next]
+
+    if (currentValue < nextValue) {
+      total -= (currentValue);
+    } else {
+      total += (currentValue);
+    }
+
+  }
+
+  return total
+   
 }
 
 
