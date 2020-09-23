@@ -1,4 +1,4 @@
-const conversion = {"M" : 1000 , "D" : 500 , "C" : 100,"L" : 50, "X" : 10 , "I" : 1}
+const conversion = {"M" : 1000 , "D" : 500 , "C" : 100,"L" : 50, "X" : 10 , "V": 5, "I" : 1}
 
 function roman_calculate(romanNum) {
   const array = romanNum.split('')
@@ -8,7 +8,7 @@ function roman_calculate(romanNum) {
   let next;
   let nextValue;
 
-  for (let i = 0;i < array.length , i++) {
+  for (let i = 0;i < array.length; i++) {
     current = array[i];
     currentValue = conversion[current]
 
@@ -27,4 +27,5 @@ function roman_calculate(romanNum) {
    
 }
 
-roman_calculate('XX', 'IV')
+const result = roman_calculate('IV')
+console.log(result)
