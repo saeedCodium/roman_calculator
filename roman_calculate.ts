@@ -8,8 +8,8 @@ function roman_calculate(romanNum) {
   let next;
   let nextValue;
 
-  for (let i = 0;i < array.length; i++) {
-    current = array[i];
+  array.map((ele, i) => {
+    current = ele;
     currentValue = conversion[current]
 
     next = array[i+1];
@@ -19,13 +19,12 @@ function roman_calculate(romanNum) {
       total -= (currentValue);
     } else {
       total += (currentValue);
-    }
-
-  }
+      }
+  })
 
   return total
    
 }
 
-const result = roman_calculate('IV')
+const result = roman_calculate('XXX')
 console.log(result)
